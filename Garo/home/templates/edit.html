@@ -1,0 +1,84 @@
+{% extends '_Master.html' %}
+{% load static %}
+      
+{% block main_content %} 
+
+        <div class="page-head"> 
+            <div class="container">
+                <div class="row">
+                    <div class="page-head-content">
+                        <h1 class="page-title">Submit new property</h1>               
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End page header -->
+
+        <!-- property area -->
+        <div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
+            <div class="container">
+                <div class="header">
+                    <h3 style = "text-align: center;">
+                        You can change the information about your property here!
+                        <br>
+                    </h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <form method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="col-sm-12 col-sm-offset-2">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control"  name = "name" value="{{single.name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="area">Area (m<sup>2</sup>)</label>
+                            <input type="text" class="form-control"  name = "area" value="{{single.area}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <input type="text" class="form-control"  name = "bathrooms" value="{{single.bathrooms}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="garage">Garage</label>
+                            <input type="text" class="form-control"  name = "garage" value="{{single.garage}}">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="text" class="form-control"  name = "price" value="{{single.price}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <input type="text" class="form-control"  name = "bedrooms" value="{{single.bedrooms}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="garden">Garden</label>
+                            <input type="text" class="form-control"  name = "garden" value="{{single.garden}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="images">Images</label>
+                            <input type="file" name = "images" multiple>
+                            <p class="help-block">You can select multiples images for your property</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label>Description </label>
+                            <textarea rows="3" class="form-control" name = "description" value = "{{single.description}}"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center">
+                    <button name = "btnEdit" class="btn btn-default" value="Submit">Submit</button>
+                </div>
+            </form>
+            
+        </div>
+
+        {% endblock %}  

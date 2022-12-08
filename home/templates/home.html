@@ -1,0 +1,208 @@
+{% extends '_Master.html' %}
+{% load static %}
+{% load humanize %}
+{% block main_content %} 
+
+        <div class="page-head"> 
+            <div class="container">
+                <div class="row">
+                    <div class="page-head-content">
+                        <h1 class="page-title">{{property_single.name}} </h1>               
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
+            <div class="container">   
+                <div class="clearfix padding-top-40" >
+                    <div class="col-md-8 single-property-content prp-style-2">
+                        <div class="">
+                            <div class="row">
+                                <div class="light-slide-item">            
+                                    <div class="clearfix">
+                                        <div class="favorite-and-print">
+                                            <a class="add-to-fav" href="#login-modal" data-toggle="modal">
+                                                <i class="fa fa-star-o"></i>
+                                            </a>
+                                            <a class="printer-icon " href="javascript:window.print()">
+                                                <i class="fa fa-print"></i> 
+                                            </a>
+                                        </div> 
+                                        
+                                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                                            {% for each in photos %}
+                                            <li data-thumb="{{ each.image.url }}"> 
+                                                <img src="{{ each.image.url }}" />
+                                            </li>
+                                            {% endfor %}                  
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-property-wrapper">
+
+                                <div class="section">
+                                    <h4 class="s-property-title">Description</h4>
+                                    <div class="s-property-content">
+                                        <p>{{property_single.description}}</p>
+                                    </div>
+                                </div>                                                           
+                                <div class="section property-share"> 
+                                    <h4 class="s-property-title">Share with your friends </h4> 
+                                    <div class="roperty-social">
+                                        <ul> 
+                                            <li><a title="Share this on dribbble " href="#"><img src="{% static "assets/img/social_big/dribbble_grey.png"%}"></a></li>                                         
+                                            <li><a title="Share this on facebok " href="#"><img src="{% static "assets/img/social_big/facebook_grey.png"%}"></a></li> 
+                                            <li><a title="Share this on delicious " href="#"><img src="{% static "assets/img/social_big/delicious_grey.png"%}"></a></li> 
+                                            <li><a title="Share this on tumblr " href="#"><img src="{% static "assets/img/social_big/tumblr_grey.png"%}"></a></li> 
+                                            <li><a title="Share this on digg " href="#"><img src="{% static "assets/img/social_big/digg_grey.png"%}"></a></li> 
+                                            <li><a title="Share this on twitter " href="#"><img src="{% static "assets/img/social_big/twitter_grey.png"%}"></a></li> 
+                                            <li><a title="Share this on linkedin " href="#"><img src="{% static "assets/img/social_big/linkedin_grey.png"%}"></a></li>                                        
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-4 p0">
+                        <aside class="sidebar sidebar-property blog-asside-right property-style2">
+                            <div class="dealer-widget">
+                                <div class="dealer-content">
+                                    <div class="inner-wrapper">
+                                        <div class="single-property-header">                                          
+                                            <h1 class="property-title">{{property_single.name}}</h1>
+                                            <span class="property-price">${{property_single.price|floatformat:0|intcomma}}</span>
+                                        </div>
+
+                                        <div class="property-meta entry-meta clearfix ">   
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-tag">                                                                                      
+                                                    <img src="{% static "assets/img/icon/sale-orange.png"%}">
+                                                </span>
+                                                <span class="property-info-entry">
+                                                    <span class="property-info-label">Status</span>
+                                                    <span class="property-info-value">{{property_single.status}}</span>
+                                                </span>
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info icon-area">
+                                                    <img src="{% static "assets/img/icon/room-orange.png"%}">
+                                                </span>
+                                                <span class="property-info-entry">
+                                                    <span class="property-info-label">Area</span>
+                                                    <span class="property-info-value">{{property_single.area|floatformat:0|intcomma}}<b class="property-info-unit">Sq Ft</b></span>
+                                                </span>
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-bed">
+                                                    <img src="{% static "assets/img/icon/bed-orange.png"%}">
+                                                </span>
+                                                <span class="property-info-entry">
+                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-value">{{property_single.bedrooms}}</span>
+                                                </span>
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-bath">
+                                                    <img src="{% static "assets/img/icon/shawer-orange.png"%}">
+                                                </span>
+                                                <span class="property-info-entry">
+                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-value">{{property_single.bathrooms}}</span>
+                                                </span>
+                                            </div>
+                                            
+
+                                            
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-garage">
+                                                    <img src="{% static "assets/img/icon/cars-orange.png"%}">
+                                                </span>
+                                                <span class="property-info-entry">
+                                                    <span class="property-info-label">Garages</span>
+                                                    <span class="property-info-value">{{property_single.garage}}</span>
+                                                </span>
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-garage">
+                                                    <img src="{% static "assets/img/icon/os-orange.png"%}">
+                                                </span>
+                                                <span class="property-info-entry">
+                                                    <span class="property-info-label">Garden</span>
+                                                    <span class="property-info-value">{{property_single.garden}}</span>
+                                                </span>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="dealer-section-space">
+                                            <span>Owner information</span>
+                                        </div>
+                                        <div class="clear">
+                                            <div class="col-xs-4 col-sm-4 dealer-face">
+                                                
+                                                    <img src="{{ owner.image.url}}" class="img-circle">
+                                                
+                                            </div>
+                                            <div class="col-xs-8 col-sm-8 ">
+                                                <h3 class="dealer-name">
+                                                    <a style = "color:white;">{{owner.name}}</a>
+                                                            
+                                                </h3>
+                                                <div class="dealer-social-media">
+                                                    <a class="twitter" target="_blank" href="">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                    <a class="facebook" target="_blank" href="">
+                                                        <i class="fa fa-facebook"></i>
+                                                    </a>
+                                                    <a class="gplus" target="_blank" href="">
+                                                        <i class="fa fa-google-plus"></i>
+                                                    </a>
+                                                    <a class="linkedin" target="_blank" href="">
+                                                        <i class="fa fa-linkedin"></i>
+                                                    </a> 
+                                                    <a class="instagram" target="_blank" href="">
+                                                        <i class="fa fa-instagram"></i>
+                                                    </a>       
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="clear">
+                                            <ul class="dealer-contacts">                                       
+                                                <li><i class="pe-7s-map-marker strong"> </i> {{owner.address}}</li>
+                                                <li><i class="pe-7s-mail strong"> </i> {{owner.email}}</li>
+                                                <li><i class="pe-7s-call strong"> </i> {{owner.phone}}</li>
+                                            </ul>
+                                            <p>{{owner.description}}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            
+
+                            
+
+                        </aside>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+{% endblock %}  

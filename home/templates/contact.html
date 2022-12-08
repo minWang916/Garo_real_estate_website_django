@@ -1,0 +1,104 @@
+{% extends '_Master.html' %}
+{% load static %}
+      
+{% block main_content %} 
+
+        <div class="page-head"> 
+            <div class="container">
+                <div class="row">
+                    <div class="page-head-content">
+                        <h1 class="page-title">Contact page</h1>               
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End page header -->
+
+        <!-- property area -->
+        <div class="content-area recent-property padding-top-40" style="background-color: #FFF;">
+            <div class="container">  
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2"> 
+                        <div class="" id="contact1">                        
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h3><i class="fa fa-map-marker"></i> Address</h3>
+                                    <p>13 Nguyen Thi Minh Khai
+                                        <br>Chau Duc 
+                                        <br>An Giang    
+                                        <br>
+                                        <strong>Viet Nam</strong>
+                                    </p>
+                                </div>
+                                <!-- /.col-sm-4 -->
+                                <div class="col-sm-4">
+                                    <h3><i class="fa fa-phone"></i> Call center</h3>
+                                    <p class="text-muted">This number is toll free if calling from
+                                        Viet Nam otherwise we advise you to use the electronic
+                                        form of communication.</p>
+                                    <p><strong>+33 555 444 333</strong></p>
+                                </div>
+                                <!-- /.col-sm-4 -->
+                                <div class="col-sm-4">
+                                    <h3><i class="fa fa-envelope"></i> Electronic support</h3>
+                                    <p class="text-muted">Please feel free to write an email to us.</p>
+                                    <ul>
+                                        <li><strong><a href="mailto:">Garo@estate.com</a></strong>   </li>
+                                        <li><strong><a href="mailto:">customer@service.com</a></strong>   </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-sm-4 -->
+                            </div>
+                            <!-- /.row -->
+                            <hr>
+                            <div id="map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7836.112841094739!2d106.7826824!3d10.8833134!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d89aad780e49%3A0x54542761d4c22175!2sHCMC%20National%20University%20Dormitory%20-%20Zone%20B!5e0!3m2!1sen!2s!4v1656082640313!5m2!1sen!2s" width="750" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <hr>
+                            <h2>Contact form</h2>
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="firstname">Firstname</label>
+                                            <input type="text" class="form-control" id="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="lastname">Lastname</label>
+                                            <input type="text" class="form-control" id="lastname">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="text" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="subject">Subject</label>
+                                            <input type="text" class="form-control" id="subject">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea id="message" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </form>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+  <!-- Footer area-->
+  {% endblock %}  

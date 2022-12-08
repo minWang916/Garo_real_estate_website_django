@@ -1,0 +1,75 @@
+{% extends '_Master.html' %}
+{% load static %}
+{% block main_content %} 
+
+        <div class="page-head"> 
+            <div class="container">
+                <div class="row">
+                    <div class="page-head-content">
+                        <h1 class="page-title">New account / Sign in </h1>               
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="register-area" style="background-color: rgb(249, 249, 249);">
+            <div class="container">
+                <div class="col-md-6">
+                    <div class="box-for overflow">
+                        <div class="col-md-12 col-xs-12 register-blocks">
+                            <h2>New account : </h2> 
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ result_register|safe  }}
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name = 'name'>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" id="email" name = 'email'>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name = 'password'>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-default" name="btnSignUp" value="Register">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6">
+                    <div class="box-for overflow">                         
+                        <div class="col-md-12 col-xs-12 login-blocks">
+                            <h2>Login : </h2> 
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ result_login|safe  }}
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" id="email" name = "email_login">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name = "password_login">
+                                </div>
+                                <div class="text-center">
+                                    <button name = "btnLogIn" class="btn btn-default" value="LogIn"> Log in</button>
+                                </div>
+                            </form>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+            
+            
+            </div>
+        </div>      
+
+        {% endblock %}  

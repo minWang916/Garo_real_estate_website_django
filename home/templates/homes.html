@@ -1,0 +1,134 @@
+{% extends '_Master.html' %}
+{% load static %}
+{% load humanize %}
+{% block main_content %} 
+
+        <div class="page-head"> 
+            <div class="container">
+                <div class="row">
+                    <div class="page-head-content">
+                        <h1 class="page-title">Available properties</h1>               
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End page header -->
+
+        <!-- property area -->
+        <div class="properties-area recent-property" style="background-color: #FFF;">
+            <div class="container">  
+                <div class="row">
+                     
+                <div class="col-md-3 p0 padding-top-40">
+                    <div class="blog-asside-right pr0">
+                        <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Smart search</h3>
+                            </div>
+                            <div class="panel-body search-widget">
+                                
+                                <form class=" form-inline" method = "get" action = "{% url 'home:search' %}"> 
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input type="text" class="form-control" placeholder="Key word" name = "home_search" value = "{{keyword}}">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset >
+                                        <div class="row">
+                                            <div class="col-xs-12">  
+                                                <input class="button btn largesearch-btn" value="Search" type="submit">
+                                            </div>  
+                                        </div>
+                                    </fieldset>                                     
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default sidebar-menu wow fadeInRight animated">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Recommended</h3>
+                            </div>
+                            <div class="panel-body recent-property-widget">
+                                        <ul>
+                                        {% for each in r_homes%}
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+                                                <a href="{% url 'home:home' each.id%}"><img src="{{each.thumbnail.url}}"></a>
+                                                
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                                                <h6> <a href="{% url 'home:home' each.id%}">{{each.name}} </a></h6>
+                                                <span class="property-price">${{each.price|floatformat:0|intcomma}}</span>
+                                            </div>
+                                        </li> 
+                                        {% endfor %}
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9  pr0 padding-top-40 properties-page">
+                    <div class="col-md-12 clear"> 
+                        <div id="list-type" class="proerty-th">
+
+                                {% for each in homes %}
+                                <div class="col-sm-6 col-md-4 p0">
+                                    <div class="box-two proerty-item">
+                                        <div class="item-thumb">
+                                            <a href="{% url 'home:home' each.id%}" ><img src="{{each.thumbnail.url}}"></a>
+                                        </div>
+
+                                        <div class="item-entry overflow">
+                                            <h5 style = "height: 30px"><a href="{% url 'home:home' each.id%}"> {{each.name}} </a></h5>
+                                            <div class="dot-hr"></div>
+                                            <span class="pull-left"><b> Area :</b> {{each.area|floatformat:0|intcomma}} m<sup>2</sup> </span>
+                                            <span class="proerty-price pull-right"> $ {{each.price|floatformat:0|intcomma}}</span>
+                                            <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                                            <div class="property-icon">
+                                                <img src="{% static "assets/img/icon/bed.png" %}"> ({{each.bedrooms}})|
+                                                <img src="{% static "assets/img/icon/shawer.png" %}"> ({{each.bathrooms}})|
+                                                <img src="{% static "assets/img/icon/cars.png" %}"> ({{each.garage}})  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                {% endfor %}
+                                 
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+                                
+                        </div>
+                    </div>
+                    
+                    {% comment %} <div class="col-md-12"> 
+                        <div class="pull-right">
+                            <div class="pagination">
+                                <ul>
+                                    <li><a href="#">Prev</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">Next</a></li>
+                                </ul>
+                            </div>
+                        </div>                
+                    </div> {% endcomment %}
+                </div>  
+                </div>              
+            </div>
+        </div>
+        {% endblock %}  
