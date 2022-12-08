@@ -5,3 +5,6 @@
 
 ## Property detail page
 ![Capture](https://user-images.githubusercontent.com/116493016/206477312-d24baf0f-c957-45c9-9f12-2c88a85bbc1c.PNG)
+
+## Personal property page
+![Capture](https://user-images.githubusercontent.com/116493016/206478035-94084bea-b9fe-46e0-9b14-efcd0708df58.PNG)
