@@ -8,3 +8,6 @@
 
 ## Personal property page
 ![Capture](https://user-images.githubusercontent.com/116493016/206478035-94084bea-b9fe-46e0-9b14-efcd0708df58.PNG)
+
+## Profile page
+![e](https://user-images.githubusercontent.com/116493016/206478150-82f5a03d-1d44-421e-8ed2-40b57b181a26.PNG)
