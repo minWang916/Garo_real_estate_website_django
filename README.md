@@ -22,16 +22,6 @@ The structure of this websites is as follow:
 - Contact: Shows company info and a form for leaving information.
 - Profile: Display profile info of user and allow modification of personal info. 
 
-
-## Deployment
-
-To deploy this project, open Command Prompt in the folder of the project and run:
-
-```bash
-  python manage.py runserver
-```
-
-
 ## Screenshots
 
 ### Index.html
@@ -46,4 +36,18 @@ To deploy this project, open Command Prompt in the folder of the project and run
 ### Contact.html
 
 ![Contact](https://github.com/minWang916/Garo_real_estate_website_django/assets/116493016/e81139e8-cc5d-43f0-be12-1eccdddd723d)
+
+### Profile.html 
+
+![e](https://user-images.githubusercontent.com/116493016/206478150-82f5a03d-1d44-421e-8ed2-40b57b181a26.PNG)
+
+## Deployment
+
+To deploy this project, open Command Prompt in the folder of the project and run:
+
+```bash
+  python manage.py runserver
+```
+
+
 
