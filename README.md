@@ -4,7 +4,7 @@
 
 Our Django website allows users to login, submit properties, and view property listings. It offers secure authentication, property submission with images, and a user-friendly interface for browsing properties.
 
-**Preview link: ** https://garo-home.herokuapp.com/
+**Preview link:** https://garo-home.herokuapp.com/
 
 ## Authors
 
