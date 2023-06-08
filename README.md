@@ -10,6 +10,13 @@ Our Django website allows users to login, submit properties, and view property l
 - [@minwang916](https://www.github.com/minwang916)
 
 
+
+## Tech Stack
+
+**Front End:** HTML, BootstrapCSS
+
+**Back End:** Django
+
 ## Appendix
 
 The structure of this websites is as follow:
